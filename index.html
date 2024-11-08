@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirector</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            color-scheme: light dark;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            outline: 0;
+            border: 0;
+            background-color: rgb(100, 100, 100);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        a {
+            background-color: purple;
+            color: white;
+            text-decoration: none;
+            margin-top: 25px;
+            padding: 10px;
+            border-radius: 10px;
+            transition: 0.3s ease;
+        }
+
+        a:hover {
+            background-color: rgb(100, 0, 100);
+        }
+    </style>
+</head>
+<body>
+    <h1>Redirector</h1>
+    <input type="text" id="main">
+    <a href="#" id="btn">Bring me here!</a>
+    <script>
+        const link = document.getElementById("main");
+        const btn = document.getElementById("btn");
+        setInterval(() => {
+            btn.href = link.value;
+        }, 100)
+    </script>
+</body>
+</html>
