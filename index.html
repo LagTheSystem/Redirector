@@ -54,7 +54,11 @@
         const link = document.getElementById("main");
         const btn = document.getElementById("btn");
         setInterval(() => {
-            btn.href = link.value;
+            if (link.value.startsWith("https://")) {
+                btn.href = link.value;
+            } else {
+                btn.href = "https://" + link.value;
+            }
         }, 100)
     </script>
 </body>
